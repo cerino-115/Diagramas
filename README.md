@@ -36,8 +36,3 @@ flowchart TD
     ACT -->|"Retroalimentación (posición, fuerza, estado)"| SOCK  
     SOCK -->|"Respuestas y datos"| GUI  
 ```
-
-    B <-->|"① Comandos y datos%%BR%%② Ethernet RJ45 GbE"| D
-    D <-->|"③ Instrucciones internas%%BR%%④ Buses de campo"| E
-    E -.->|"⑤ Retroalimentación%%BR%%en tiempo real"| D
-    D -.->|"⑥ Actualización de estado"| B
