@@ -31,6 +31,6 @@ flowchart TD
 
     GUI -->|"RJ45 Gigabit Ethernet (Socket TCP/IP)"| SOCK  
     SOCK -->|"Buses de Campo Internos"| ACT  
-    ACT -->|"Retroalimentación (posición, fuerza, estado)"| SOCK  
+    ACT -->|"Retroalimentación"| SOCK  
     SOCK -->|"Respuestas y datos"| GUI  
 ```
