@@ -16,21 +16,11 @@ graph LR
 ```
 ```mermaid  
 flowchart TD  
-    subgraph RubikPi["SBC Rubik Pi 3"]  
-        RT["Ubuntu PREEMPT_RT Kernel"]  
-        GUI["Algoritmo Python GUI"]  
-    end  
+    RT["Ubuntu PREEMPT_RT Kernel"] --- GUI["Algoritmo Python GUI"]  
+    GUI -->|"RJ45 Gigabit Ethernet (Socket TCP/IP)"| SOCK["Servidor Socket RAPID"]  
+    SOCK -->|"Buses de Campo Internos"| ACT["Robot ABB YuMi IRB 14000"]  
 
-    subgraph IRC5["Controlador IRC5"]  
-        SOCK["Servidor Socket RAPID"]  
-    end  
-
-    subgraph YUMI["Robot ABB YuMi IRB 14000"]  
-        ACT["Actuadores y Sensores"]  
-    end  
-
-    GUI -->|"RJ45 Gigabit Ethernet (Socket TCP/IP)"| SOCK  
-    SOCK -->|"Buses de Campo Internos"| ACT  
     ACT -->|"Retroalimentación"| SOCK  
     SOCK -->|"Respuestas y datos"| GUI  
+
 ```
