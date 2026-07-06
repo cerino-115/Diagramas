@@ -14,21 +14,28 @@ graph LR
   %% Estilo del tópico (nodo en borde)
   style B fill:#ff9,stroke:#f66,stroke-width:2px,stroke-dasharray: 5 5
 ```
+```mermaid  
+flowchart TD  
+    subgraph RubikPi["SBC Rubik Pi 3"]  
+        direction TB  
+        RT["Ubuntu PREEMPT_RT Kernel"]  
+        GUI["Algoritmo Python GUI"]  
+        RT --- GUI  
+    end  
 
-flowchart LR
-    subgraph N1["Capa 1: Computación"]
-        A["Rubik Pi 3<br/><small>Ubuntu PREEMPT_RT</small>"]
-        B["Algoritmo Python<br/>Interfaz Gráfica"]
-    end
+    subgraph IRC5["Controlador IRC5"]  
+        SOCK["Servidor Socket RAPID"]  
+    end  
 
-    subgraph N2["Capa 2: Control"]
-        C["Controlador IRC5"]
-        D["Servidor Socket<br/>RAPID"]
-    end
+    subgraph YUMI["Robot ABB YuMi IRB 14000"]  
+        ACT["Actuadores y Sensores"]  
+    end  
 
-    subgraph N3["Capa 3: Actuación"]
-        E["Robot ABB YuMi<br/>IRB 14000"]
-    end
+    GUI -->|"RJ45 Gigabit Ethernet (Socket TCP/IP)"| SOCK  
+    SOCK -->|"Buses de Campo Internos"| ACT  
+    ACT -->|"Retroalimentación (posición, fuerza, estado)"| SOCK  
+    SOCK -->|"Respuestas y datos"| GUI  
+```
 
     B <-->|"① Comandos y datos%%BR%%② Ethernet RJ45 GbE"| D
     D <-->|"③ Instrucciones internas%%BR%%④ Buses de campo"| E
