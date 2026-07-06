@@ -17,10 +17,8 @@ graph LR
 ```mermaid  
 flowchart TD  
     subgraph RubikPi["SBC Rubik Pi 3"]  
-        direction TB  
         RT["Ubuntu PREEMPT_RT Kernel"]  
         GUI["Algoritmo Python GUI"]  
-        RT --- GUI  
     end  
 
     subgraph IRC5["Controlador IRC5"]  
