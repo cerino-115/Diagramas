@@ -33,4 +33,5 @@ flowchart LR
 (Atenuación de Ruido 60 Hz)"] -->|"V_filtrado"| D
     D["ADC
 (Conversión Digital de 0-5 V)"]
+
 ```
