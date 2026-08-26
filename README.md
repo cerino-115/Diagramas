@@ -27,10 +27,10 @@ flowchart TD
 ```mermaid  
 flowchart LR
     A["Puente de Wheatstone
-(Conversión Resistencia a V)"] -->|"V_diff (mV)"| B
-    B["Etapa de Hardware a Seleccionar"] -->|"V_ampli (V)"| C
+(Conversión Resistencia a V)"] --V_diff (mV)--> B
+    B["Etapa de Hardware a Seleccionar"] --V_ampli (V)--> C
     C["Filtro Activo Paso Bajas
-(Atenuación de Ruido 60 Hz)"] -->|"V_filtrado"| D
+(Atenuación de Ruido 60 Hz)"] --V_filtrado--> D
     D["ADC
 (Conversión Digital de 0-5 V)"]
 
