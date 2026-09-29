@@ -47,10 +47,9 @@ flowchart TD
     E --> F["VISIÓN CLÁSICA<br/>HSV / Lab / RGB"]
     E --> G["ML<br/>clasificador / regresor"]
 
-    F -.-> H
-    G -.-> H
+    F -.-> I[ESTADO DE REACCIÓN]
+    G -.-> I
 
-    H ==> I[ESTADO DE REACCIÓN]
     I --> J[ACCIÓN DEL ROBOT]
 
     style A fill:#e8eefc,stroke:#4a6fa5,stroke-width:2px
