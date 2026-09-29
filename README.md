@@ -36,3 +36,26 @@ flowchart LR
 (Conversión Digital de 0-5 V)"]
 
 ```
+
+```mermaid  
+flowchart TD
+    A[PROCESO QUÍMICO] --> B[MUESTRA<br/>matraz / vaso]
+    B --> C["SISTEMA ÓPTICO<br/>D435i + iluminación"]
+    C --> D["ADQUISICIÓN<br/>RGB + profundidad"]
+    D --> E["PREPROCESAMIENTO<br/>ROI + corrección de color + filtrado"]
+
+    E --> F["VISIÓN CLÁSICA<br/>HSV / Lab / RGB"]
+    E --> G["ML<br/>clasificador / regresor"]
+
+    F -.-> H{"Selección de camino<br/>(por definir: uno o ambos)"}
+    G -.-> H
+
+    H ==> I[ESTADO DE REACCIÓN]
+    I --> J[ACCIÓN DEL ROBOT]
+
+    style A fill:#e8eefc,stroke:#4a6fa5,stroke-width:2px
+    style E fill:#fdf3d8,stroke:#c9a227
+    style H fill:#f3e6f7,stroke:#8e5ca8,stroke-width:2px,stroke-dasharray: 5 3
+    style J fill:#d9f2e6,stroke:#2f8f5b,stroke-width:2px
+
+```
