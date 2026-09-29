@@ -47,7 +47,7 @@ flowchart TD
     E --> F["VISIÓN CLÁSICA<br/>HSV / Lab / RGB"]
     E --> G["ML<br/>clasificador / regresor"]
 
-    F -.-> H{"Selección de camino<br/>(por definir: uno o ambos)"}
+    F -.-> H
     G -.-> H
 
     H ==> I[ESTADO DE REACCIÓN]
