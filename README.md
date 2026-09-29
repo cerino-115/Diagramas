@@ -54,7 +54,6 @@ flowchart TD
 
     style A fill:#e8eefc,stroke:#4a6fa5,stroke-width:2px
     style E fill:#fdf3d8,stroke:#c9a227
-    style H fill:#f3e6f7,stroke:#8e5ca8,stroke-width:2px,stroke-dasharray: 5 3
     style J fill:#d9f2e6,stroke:#2f8f5b,stroke-width:2px
 
 ```
